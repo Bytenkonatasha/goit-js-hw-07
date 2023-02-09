@@ -6,7 +6,6 @@ const modalContainer = document.querySelector(".gallery");
 const cardsMarkup = galleryItemsImg(galleryItems);
 
 modalContainer.insertAdjacentHTML('beforeend', cardsMarkup);
-modalContainer.addEventListener('click', onImgClick);
 
 function galleryItemsImg (gallery){
     return gallery
@@ -20,10 +19,7 @@ function galleryItemsImg (gallery){
         .join("");
 }
 
-function onImgClick(event){
-    event.preventDefault();
     const Lightbox = new SimpleLightbox(".gallery__item", {
         captionDelay: 250,
         captionsData: "alt",
     });
-}
